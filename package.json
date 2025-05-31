@@ -1,0 +1,46 @@
+{
+  "name": "@webdevtoday/ds-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for DirectStay API integration",
+  "main": "mcpServer.js",
+  "type": "module",
+  "bin": {
+    "ds-mcp-server": "./bin/ds-mcp-server.js"
+  },
+  "scripts": {
+    "list-tools": "node index.js tools"
+  },
+  "files": [
+    "bin/",
+    "commands/",
+    "lib/",
+    "tools/",
+    "index.js",
+    "mcpServer.js"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "WebDevToday",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "directstay",
+    "api",
+    "model-context-protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdevtodayjason/ds-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webdevtodayjason/ds-mcp-server/issues"
+  },
+  "homepage": "https://github.com/webdevtodayjason/ds-mcp-server#readme"
+}
