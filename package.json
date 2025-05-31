@@ -5,7 +5,7 @@
   "main": "mcpServer.js",
   "type": "module",
   "bin": {
-    "ds-mcp-server": "./bin/ds-mcp-server.js"
+    "ds-mcp-server": "bin/ds-mcp-server.js"
   },
   "scripts": {
     "list-tools": "node index.js tools"
