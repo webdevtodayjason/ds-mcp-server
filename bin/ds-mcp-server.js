@@ -15,7 +15,7 @@ if (!existsSync(nodeModulesPath)) {
   try {
     execSync('npm install --omit=dev', {
       cwd: join(__dirname, '..'),
-      stdio: 'inherit'
+      stdio: ['ignore', 'ignore', 'inherit'] // Only show errors
     });
   } catch (error) {
     console.error('Failed to install dependencies:', error.message);
