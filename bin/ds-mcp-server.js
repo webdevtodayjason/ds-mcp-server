@@ -2,10 +2,26 @@
 
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { spawn } from 'child_process';
+import { spawn, execSync } from 'child_process';
+import { existsSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Check if node_modules exists
+const nodeModulesPath = join(__dirname, '..', 'node_modules');
+if (!existsSync(nodeModulesPath)) {
+  console.error('Installing dependencies...');
+  try {
+    execSync('npm install --omit=dev', {
+      cwd: join(__dirname, '..'),
+      stdio: 'inherit'
+    });
+  } catch (error) {
+    console.error('Failed to install dependencies:', error.message);
+    process.exit(1);
+  }
+}
 
 // Get the path to mcpServer.js
 const serverPath = join(__dirname, '..', 'mcpServer.js');
